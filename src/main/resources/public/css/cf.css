@@ -1,0 +1,61 @@
+
+div{
+
+}
+
+#monitoring{
+	float:left;
+	width:900px;
+	border: 1px solid blue;
+	border-radius: 25px;
+	padding:10px;	
+	margin-right:10px;
+}
+
+#updates{
+	float:left;
+	width: 550px;
+	border: 1px solid green;
+	border-radius: 25px;
+	padding:10px;	
+}
+
+#tradeEvents{
+	display: table;
+	float: left;
+	width:300px; 		
+}
+
+div.row {
+	 display: table-row;
+}
+
+div.cell{
+	display: table-cell;
+	padding-right:5px;
+}
+.textlayout{
+	padding-left:5px;
+	border-left: 1px solid grey;
+	padding-right:5px;
+}
+
+#vmap{
+	float:left;
+	width: 600px; 
+	height: 400px;
+}
+
+#tradeFeed{
+	display: table;
+	float: left;	
+}
+
+#tradeFeed .offeredTrades .cell {
+	padding-left:20px;	
+}
+
+#tradeFeed .offeredTrades .rate {
+	min-width: 80px;
+}
+

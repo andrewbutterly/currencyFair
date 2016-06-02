@@ -1,0 +1,76 @@
+<html>
+<head>
+	<title>CurrencyFair Test, ab: Feed page</title>
+
+	<link href="css/vmap/jqvmap.min.css" media="screen" rel="stylesheet"type="text/css" />
+	<link href="css/cf.css" media="screen" rel="stylesheet"type="text/css" />
+	
+	<script type="text/javascript" src="js/jquery-2.2.4.min.js"charset="utf-8"></script>
+	<script type="text/javascript" src="js/jsrender.min.js"charset="utf-8"></script>
+	
+	<script type="text/javascript" src="js/vmap/jquery.vmap.min.js"charset="utf-8"></script>
+	<script type="text/javascript" src="js/vmap/maps/jquery.vmap.world.js"charset="utf-8"></script>	
+	
+	<script type="text/javascript" src="js/sockjs-0.3.4.js" charset="utf-8"></script>
+	<script type="text/javascript" src="js/stomp.js" charset="utf-8"></script>
+	<script type="text/javascript" src="js/cf.js" charset="utf-8"></script>	
+
+	<script type="text/javascript">		
+		$(document).ready(function() {
+			initPage();						
+		});
+	</script>	
+	
+</head>
+<body>
+	<noscript>
+		<h2 style="color: #ff0000">This results page works using Javascript. Please enable JS and reload the page.</h2>
+	</noscript>
+		
+	<div id="container">	
+				
+		<div id="monitoring">			
+			<div id="tradeEvents">
+				<h3>Trade Updates by Country</h3>
+				<div id="tradeUpdate"></div>
+			</div>	
+			
+			<div id="vmap"></div>
+		</div>
+		
+		<div id="updates">			
+			<h3>Offered Trades by Market Direction</h3>			
+			<div id="tradeFeed"></div>		
+		</div>
+	
+	</div>
+
+	<script id="tradeProcessed" type="text/x-jsrender">
+		<div class="row">
+   			<div class="cell">{{:originatingCountry}}</div>
+			<div class="cell textlayout">Offered:</div>
+			<div class="cell" id="tp_id_{{:originatingCountry}}">{{:culmativeAmount}}</div>
+		</div>
+	</script>
+	
+	<script id="market" type="text/x-jsrender">
+		<div class="row" id="trade_{{:market}}">
+   			<div class="cell">{{:market}}</div>
+		</div>
+		<div class="row offeredTrades">
+   			<div class="cell" id="trade_trades_{{:market}}">{{:trades}}</div>
+		</div>
+	</script>
+	
+	<script id="tradeAtRate" type="text/x-jsrender">
+		<div class="row">
+			<div class="cell">Rate:</div>
+   			<div class="cell rate">{{:rate}}</div>
+			<div class="cell textlayout">Sell:</div>	
+			<div class="cell" id="{{:id}}">{{:amount}}</div>
+		</div>
+	</script>
+
+</body>
+
+</html>
